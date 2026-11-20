@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>青島 · 八大關 — Qingdao Badaguan 3D</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c8583e'/%3E%3Cpath d='M12 42 L32 18 L52 42 Z' fill='%23f6efe2' opacity='0.95'/%3E%3Crect x='22' y='40' width='20' height='12' rx='2' fill='%23e6b863'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene-canvas"></canvas>
+
+      <div id="loading-screen" class="loading-screen">
+        <div class="loading-card">
+          <div class="loading-seal">青島</div>
+          <h1 class="loading-title">八大關</h1>
+          <p class="loading-poem">紅瓦綠樹 · 碧海藍天</p>
+          <div class="loading-bar-track">
+            <div id="loading-bar-fill" class="loading-bar-fill"></div>
+          </div>
+          <p id="loading-status" class="loading-status">正在構築海濱山海與洋樓街巷…</p>
+        </div>
+      </div>
+
+      <div id="hud-root" class="hud-root">
+        <header class="hud-top">
+          <div class="location-card">
+            <div class="brand-row">
+              <span class="brand-seal">青島</span>
+              <span class="brand-name">八大關歷史文化街區</span>
+            </div>
+            <h2 id="hud-location-name" class="location-name">居庸關路 · 銀杏大道</h2>
+            <p id="hud-location-subtitle" class="location-subtitle">
+              深秋金色拱廊與落葉鋪地的長街
+            </p>
+          </div>
+
+          <div class="controls-cluster">
+            <div id="mood-bar" class="glass-pill-group" role="group" aria-label="天光氛圍"></div>
+            <div class="glass-pill-group action-group">
+              <button id="btn-mode" class="hud-btn" type="button" title="切換漫步 / 飛翔模式 (V)">
+                <span class="btn-dot"></span>
+                <span id="btn-mode-label">漫步</span>
+                <kbd>V</kbd>
+              </button>
+              <button id="btn-audio" class="hud-btn" type="button" title="開關海浪與風聲 (M)">
+                <span id="btn-audio-label">海風靜音</span>
+                <kbd>M</kbd>
+              </button>
+              <button id="btn-lock" class="hud-btn" type="button" title="進入第一人稱鎖定視角 (雙擊畫面)">
+                <span>漫遊視角</span>
+              </button>
+              <button id="btn-hide-hud" class="hud-btn icon-only" type="button" title="隱藏 / 顯示界面 (H)">
+                <kbd>H</kbd>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div id="fps-reticle" class="fps-reticle" aria-hidden="true"></div>
+
+        <footer class="hud-bottom">
+          <nav id="viewpoint-bar" class="viewpoint-bar" aria-label="精選觀景點"></nav>
+          <div class="hint-line">
+            <span><kbd>WASD</kbd> / 方向鍵移動</span>
+            <span class="sep">·</span>
+            <span>滑鼠拖曳環顧（雙擊鎖定 FPS）</span>
+            <span class="sep">·</span>
+            <span><kbd>Shift</kbd> 加速</span>
+            <span class="sep">·</span>
+            <span><kbd>V</kbd> 漫步/飛翔</span>
+            <span class="sep">·</span>
+            <span><kbd>1</kbd>–<kbd>6</kbd> 觀景點</span>
+            <span class="sep">·</span>
+            <span><kbd>H</kbd> 隱藏界面</span>
+          </div>
+        </footer>
+      </div>
+
+      <button id="hud-restore-btn" class="hud-restore-btn" type="button">
+        按 <kbd>H</kbd> 顯示界面
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
